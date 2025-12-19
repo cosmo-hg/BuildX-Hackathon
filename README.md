@@ -89,4 +89,15 @@ To run the comprehensive test suite (Tiers 1, 2, and 3):
 python3 scripts/test_runner.py
 ```
 
+---
+
+.env file structure
+
+```
+LITELLM_API_KEY
+LITELLM_BASE_URL=http://3.110.18.218/
+GA4_PROPERTY_ID
+GOOGLE_APPLICATION_CREDENTIALS=credentials.json
+```
+
 *Note: Ensure `GA4_PROPERTY_ID` is set in `scripts/test_runner.py` or `.env` for Tier 1 tests to pass.*
