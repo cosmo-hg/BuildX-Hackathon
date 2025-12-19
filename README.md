@@ -8,25 +8,25 @@ The system uses a **Hub-and-Spoke Agentic Architecture** orchestrated by a centr
 
 ```mermaid
 graph TD
-    Client[Client / API Consumer] -->|POST /query| API[FastAPI Entrypoint]
+    Client["Client / API Consumer"] -->|POST /query| API["FastAPI Entrypoint"]
     API --> Orchestrator
     
     subgraph "Core Logic"
         Orchestrator{Orchestrator Agent}
         Orchestrator -->|Intent: Analytics| AnalyticsAgent
         Orchestrator -->|Intent: SEO| SEOAgent
-        Orchestrator -->|Intent: Both| FusionEngine[Fusion Logic]
+        Orchestrator -->|Intent: Both| FusionEngine["Fusion Logic"]
     end
     
     subgraph "Data Sources"
-        AnalyticsAgent -->|GA4 Data API| GA4[Google Analytics 4]
-        SEOAgent -->|Pandas I/O| GSheets[Google Sheets (Live)]
+        AnalyticsAgent -->|GA4 Data API| GA4["Google Analytics 4"]
+        SEOAgent -->|Pandas I/O| GSheets["Google Sheets (Live)"]
         FusionEngine --> AnalyticsAgent
         FusionEngine --> SEOAgent
     end
     
     subgraph "Reasoning"
-        LLM[LiteLLM / Gemini Models]
+        LLM["LiteLLM / Gemini Models"]
         AnalyticsAgent -.->|Schema Inference| LLM
         SEOAgent -.->|Filter Generation| LLM
         Orchestrator -.->|Intent & Synthesis| LLM
