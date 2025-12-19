@@ -1,0 +1,20 @@
+[project]
+name = "spike-ai-backend"
+version = "0.1.0"
+description = "Spike AI Builder Challenge Backend"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "google-analytics-data",
+    "pandas",
+    "openai",
+    "python-dotenv",
+    "requests"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
