@@ -4,4 +4,4 @@ __pycache__/
 .env
 .DS_Store
 server.log
-credentials.json
+credentials.json.real
